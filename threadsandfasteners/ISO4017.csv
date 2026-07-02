@@ -1,10 +1,4 @@
-"Nominal Size
- M","Thread Pitch
- P (mm)","Head Across Flats
- S (mm)","Head Across Points
- e (mm)","Head Height
- k (mm)"
-M,P,S,e,k
+Nominal Size|M,Thread Pitch|P (mm),Head Across Flats|S (mm),Head Across Points|e (mm),Head Height|k (mm)
 M 1.6,0.35,3.2,3.7,1.1
 M 2,0.4,4,4.6,1.4
 M 2.5,0.45,5,5.8,1.7
