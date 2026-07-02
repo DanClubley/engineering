@@ -115,7 +115,7 @@
   
         tableHTML += "<tr>";
         headers.forEach(header => {
-          tableHTML += "<th>" + header + "</th>";
+          tableHTML += "<th>" + header.replace("|", "<br>") + "</th>";
         });
         tableHTML += "</tr>";
   
