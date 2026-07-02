@@ -101,19 +101,19 @@
         document.getElementById(targetId).innerHTML = tableHTML;
       }
 
-      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=0&single=true&output=csv")
+      fetch("ISO4762.csv")
         .then(response => response.text())
         .then(csvText => buildTable(csvText, "iso-4762-table"));
 
-      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=584532199&single=true&output=csv")
+      fetch("ISO10642.csv")
         .then(response => response.text())
         .then(csvText => buildTable(csvText, "iso-10642-table"));
 
-      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=2072777555&single=true&output=csv")
+      fetch("ISO4014.csv")
         .then(response => response.text())
         .then(csvText => buildTable(csvText, "iso-4014-table"));
 
-      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=1396637950&single=true&output=csv")
+      fetch("ISO4017.csv")
         .then(response => response.text())
         .then(csvText => buildTable(csvText, "iso-4017-table"));
 
