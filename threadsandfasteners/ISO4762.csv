@@ -1,10 +1,4 @@
-"Nominal Size
- M","Thread Pitch
- P (mm)","Head Height
- D/H (mm)","Head Diameter
- A (mm)","Hex Socket Size
- J (mm)","Hex Socket Depth
- K (mm)"
+Nominal Size|M,Thread Pitch|P (mm),Head Height|D/H (mm),Head Diameter|A (mm),Hex Socket Size|J (mm),Hex Socket Depth|K (mm)
 M1.6,0.35,1.6,3,1.5,0.8
 M2,0.4,2,3.8,1.5,1
 M2.5,0.45,2.5,4.5,2,1.25
