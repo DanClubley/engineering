@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: Inter, sans-serif;
+        color: #222;
+        margin: 40px auto;
+        max-width: 860px;
+      }
+      h1 { font-size: 32px; }
+      h2 { font-size: 28px; }
+      h3 { font-size: 22px; }
+      a { 
+        color: #444;
+        text-decoration: none; 
+      }
+      a:hover {
+        color: #000;
+      }
+      .section-card {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 16px;
+        background-color: #f9f9f9;
+        border-radius: 6px;
+      }
+      .divider-thick {
+        border: none;
+        border-top: 3px solid #222;
+        margin: 4px 0;
+      }
+      .divider-close {
+        margin: 4px 0 16px;
+      }
+    </style>
+    <title>Clubley Design | Fastener Data</title>
+  </head>
+
+  <body>
+    <h1>Engineering Reference Collection</h1>
+    <h2>Fastener Data</h2>
+    <hr class="divider-thick">
+    <hr class="divider-thick divider-close">
+
+    <div class="section-card">
+      <h3>ISO 4762 - Socket Head Cap Screws</h3>
+      <a href="https://knowledge.bsigroup.com/products/hexagon-socket-head-cap-screws">BSI Knowledge ISO 4762</a>
+      <div id="iso-4762-table"></div>
+    </div>
+
+    <div class="section-card">
+      <h3>ISO 10642 Socket Countersunk Head Screw</h3>
+      <a href="https://knowledge.bsigroup.com/products/fasteners-hexagon-socket-countersunk-head-screws-with-reduced-loadability-2">BSI Knowledge ISO 10642</a>
+      <div id="iso-10642-table"></div>
+    </div>
+
+    <div class="section-card">
+      <h3>ISO 4014 Hex Head Partial Thread Screw</h3>
+      <a href="https://knowledge.bsigroup.com/products/fasteners-hexagon-head-bolts-product-grades-a-and-b-1">BSI Knowledge ISO 4014</a>
+      <div id="iso-4014-table"></div>
+    </div>
+
+    <div class="section-card">
+      <h3>ISO 4017 Hex Head Full Thread</h3>
+      <a href="https://knowledge.bsigroup.com/products/fasteners-hexagon-head-screws-product-grades-a-and-b-2">BSI Knowledge ISO 4017</a>
+      <div id="iso-4017-table"></div>
+    </div>
+
+
+    <script>
+
+      function buildTable(csvText, targetId) {
+        const rows = csvText.trim().split("\n");
+        const headers = rows[0].split(",");
+  
+        let tableHTML = "<table>";
+  
+        tableHTML += "<tr>";
+        headers.forEach(header => {
+          tableHTML += "<th>" + header + "</th>";
+        });
+        tableHTML += "</tr>";
+  
+        rows.slice(1).forEach(row => {
+          const cells = row.split(",");
+          tableHTML += "<tr>";
+          cells.forEach(cell => {
+            tableHTML += "<td>" + cell + "</td>";
+          });
+          tableHTML += "</tr>";
+        });
+  
+        tableHTML += "</table>";
+  
+        document.getElementById(targetId).innerHTML = tableHTML;
+      }
+
+      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=0&single=true&output=csv")
+        .then(response => response.text())
+        .then(csvText => buildTable(csvText, "iso-4762-table"));
+
+      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=584532199&single=true&output=csv")
+        .then(response => response.text())
+        .then(csvText => buildTable(csvText, "iso-10642-table"));
+
+      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=2072777555&single=true&output=csv")
+        .then(response => response.text())
+        .then(csvText => buildTable(csvText, "iso-4014-table"));
+
+      fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS-tVjNZK7_P7JK69_MKr74kxPv1yGY4BjN6kQTO-CecMXIhm7xc7XbnBxtEkQy3q1c7d6D4XE6K2BI/pub?gid=1396637950&single=true&output=csv")
+        .then(response => response.text())
+        .then(csvText => buildTable(csvText, "iso-4017-table"));
+
+    </script>
+      
+  </body>
+</html>
 
